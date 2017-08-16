@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.scorpio.fengyang.dao.BrandDao">
+    <!-- 根据条件查询所有符合的商品品牌 -->
+    <select id="findByExample" parameterType="Brand" resultType="Brand">
+        SELECT
+        id,
+        `name`,
+        description,
+        img_url,
+        web_site,
+        sort,
+        is_display
+        FROM
+        bbs_brand
+        <where>
+            <if test="name != null">name LIKE "%"#{name}"%"</if>
+            <if test="isDisplay != null">and is_display = #{isDisplay}</if>
+        </where>
+    </select>
+
+    <!-- 根据id查找对应的品牌对象 -->
+    <select id="findById" resultType="Brand">
+        SELECT
+            id,
+            `name`,
+            description,
+            img_url,
+            web_site,
+            sort,
+            is_display
+        FROM
+            bbs_brand
+        WHERE
+            id = #{id}
+    </select>
+
+    <!-- 更新品牌操作 -->
+    <update id="update" parameterType="Brand">
+        UPDATE `bbs_brand`
+        <set>
+          <if test="name != null">`name` = #{name},</if>
+          <if test="description != null">`description` = #{description},</if>
+          <if test="imgUrl != null">`img_url` = #{imgUrl},</if>
+          <if test="webSite != null">`web_site` = #{webSite},</if>
+          <if test="sort != null">`sort` = #{sort},</if>
+          <if test="isDisplay != null">`is_display` = #{isDisplay}</if>
+        </set>
+        WHERE
+        (`id` = #{id});
+    </update>
+
+    <!-- 将新增品牌添加进数据库 -->
+    <insert id="add" parameterType="Brand">
+        INSERT INTO `bbs_brand` (
+            `name`,
+            `description`,
+            `img_url`,
+            `web_site`,
+            `sort`,
+            `is_display`
+        )
+        VALUES
+            (
+                #{name},
+                #{description},
+                #{imgUrl},
+                #{webSite},
+                #{sort},
+                #{isDisplay}
+            );
+    </insert>
+</mapper>

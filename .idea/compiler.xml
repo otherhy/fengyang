@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="fengyang-common" />
+        <module name="fengyang-console" />
+        <module name="fengyang-dao" />
+        <module name="fengyang-interface" />
+        <module name="fengyang-login" />
+        <module name="fengyang-pojo" />
+        <module name="fengyang-portal" />
+        <module name="fengyang-service-cms" />
+        <module name="fengyang-service-cob" />
+        <module name="fengyang-service-product" />
+        <module name="fengyang-service-solr" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="fengyang" target="1.7" />
+      <module name="fengyang-common" target="1.7" />
+      <module name="fengyang-console" target="1.7" />
+      <module name="fengyang-dao" target="1.7" />
+      <module name="fengyang-interface" target="1.7" />
+      <module name="fengyang-login" target="1.7" />
+      <module name="fengyang-pojo" target="1.7" />
+      <module name="fengyang-portal" target="1.7" />
+      <module name="fengyang-service-cms" target="1.7" />
+      <module name="fengyang-service-cob" target="1.7" />
+      <module name="fengyang-service-product" target="1.7" />
+      <module name="fengyang-service-solr" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

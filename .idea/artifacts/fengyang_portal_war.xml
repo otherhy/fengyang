@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="fengyang-portal:war">
+    <output-path>$PROJECT_DIR$/fengyang-portal/target</output-path>
+    <root id="archive" name="fengyang-portal.war">
+      <element id="artifact" artifact-name="fengyang-portal:war exploded" />
+    </root>
+  </artifact>
+</component>

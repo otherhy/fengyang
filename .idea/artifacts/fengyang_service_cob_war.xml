@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="fengyang-service-cob:war">
+    <output-path>$PROJECT_DIR$/fengyang-service-cob/target</output-path>
+    <root id="archive" name="fengyang-service-cob.war">
+      <element id="artifact" artifact-name="fengyang-service-cob:war exploded" />
+    </root>
+  </artifact>
+</component>

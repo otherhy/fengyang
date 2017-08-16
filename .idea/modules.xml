@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/fengyang.iml" filepath="$PROJECT_DIR$/fengyang.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fengyang-common/fengyang-common.iml" filepath="$PROJECT_DIR$/fengyang-common/fengyang-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fengyang-console/fengyang-console.iml" filepath="$PROJECT_DIR$/fengyang-console/fengyang-console.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fengyang-dao/fengyang-dao.iml" filepath="$PROJECT_DIR$/fengyang-dao/fengyang-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fengyang-interface/fengyang-interface.iml" filepath="$PROJECT_DIR$/fengyang-interface/fengyang-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fengyang-login/fengyang-login.iml" filepath="$PROJECT_DIR$/fengyang-login/fengyang-login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fengyang-pojo/fengyang-pojo.iml" filepath="$PROJECT_DIR$/fengyang-pojo/fengyang-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fengyang-portal/fengyang-portal.iml" filepath="$PROJECT_DIR$/fengyang-portal/fengyang-portal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fengyang-service-cms/fengyang-service-cms.iml" filepath="$PROJECT_DIR$/fengyang-service-cms/fengyang-service-cms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fengyang-service-cob/fengyang-service-cob.iml" filepath="$PROJECT_DIR$/fengyang-service-cob/fengyang-service-cob.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fengyang-service-product/fengyang-service-product.iml" filepath="$PROJECT_DIR$/fengyang-service-product/fengyang-service-product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fengyang-service-solr/fengyang-service-solr.iml" filepath="$PROJECT_DIR$/fengyang-service-solr/fengyang-service-solr.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="fengyang-console:war">
+    <output-path>$PROJECT_DIR$/fengyang-console/target</output-path>
+    <root id="archive" name="fengyang-console.war">
+      <element id="artifact" artifact-name="fengyang-console:war exploded" />
+    </root>
+  </artifact>
+</component>
