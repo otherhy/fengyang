@@ -30,22 +30,27 @@ function isShow(){
 <div class="box-positon">
 	<div class="rpos">当前位置: 商品管理 - 列表</div>
 	<form class="ropt">
-		<input class="add" type="button" value="添加" onclick="window.location.href='add.jsp'"/>
+		<input class="add" type="button" value="添加" onclick="window.location.href='toAdd.do'"/>
 	</form>
 	<div class="clear"></div>
 </div>
 <div class="body-box">
-<form action="/product/list.do" method="post" style="padding-top:5px;">
-名称: <input type="text" name="name"/>
+<form action="list.do" method="post" style="padding-top:5px;">
+名称: <input type="text" name="name" value="${example.name}"/>
 	<select name="brandId">
 		<option value="">请选择品牌</option>
-		<option value="1">依琦莲</option>
-		<option value="2">凯速（KANSOON）</option>
+		<c:forEach items="${brands}" var="brand">
+			<option value="${brand.id}">${brand.name}</option>
+		</c:forEach>
 	</select>
 	<select name="isShow">
 		<option value="1">上架</option>
 		<option selected="selected" value="0">下架</option>
 	</select>
+	<script type="text/javascript">
+        $("select[name='brandId']").val("${example.brandId}");
+        $("select[name='isShow']").val("${example.isShow}");
+	</script>
 	<input type="submit" class="query" value="查询"/>
 </form>
 <form id="jvForm">
@@ -64,95 +69,64 @@ function isShow(){
 		</tr>
 	</thead>
 	<tbody class="pn-ltbody">
-		<tr bgcolor="#ffffff" onmouseover="this.bgColor='#eeeeee'" onmouseout="this.bgColor='#ffffff'">
-			<td><input type="checkbox" name="ids" value="73"/></td>
-			<td>20141028114510003</td>
-			<td align="center">依琦莲2014瑜伽服套装新款 瑜珈健身服三件套 广场舞蹈服装 女瑜伽服送胸垫 长袖紫色</td>
-			<td align="center"><img width="50" height="50" src="/images/pic/ppp.jpg"/></td>
-			<td align="center">是</td>
-			<td align="center">是</td>
-			<td align="center">是</td>
-			<td align="center">下架</td>
-			<td align="center">
-			<a href="#" class="pn-opt">查看</a> | <a href="#" class="pn-opt">修改</a> | <a href="#" onclick="if(!confirm('您确定删除吗？')) {return false;}" class="pn-opt">删除</a> | <a href="../sku/list.jsp" class="pn-opt">库存</a>
-			</td>
-		</tr>
-		<tr bgcolor="#ffffff" onmouseover="this.bgColor='#eeeeee'" onmouseout="this.bgColor='#ffffff'">
-			<td><input type="checkbox" name="ids" value="73"/></td>
-			<td>20141028114411609</td>
-			<td align="center">依琦莲2014瑜伽服套装新款 瑜珈健身服三件套 广场舞蹈服装 女瑜伽服送胸垫 长袖紫色</td>
-			<td align="center"><img width="50" height="50" src="/images/pic/ppp1.jpg"/></td>
-			<td align="center">否</td>
-			<td align="center">是</td>
-			<td align="center">否</td>
-			<td align="center">下架</td>
-			<td align="center">
-			<a href="#" class="pn-opt">查看</a> | <a href="#" class="pn-opt">修改</a> | <a href="#" onclick="if(!confirm('您确定删除吗？')) {return false;}" class="pn-opt">删除</a> | <a href="../sku/list.jsp" class="pn-opt">库存</a>
-			</td>
-		</tr>
-		<tr bgcolor="#ffffff" onmouseover="this.bgColor='#eeeeee'" onmouseout="this.bgColor='#ffffff'">
-			<td><input type="checkbox" name="ids" value="73"/></td>
-			<td>20141028114409502</td>
-			<td align="center">依琦莲2014瑜伽服套装新款 瑜珈健身服三件套 广场舞蹈服装 女瑜伽服送胸垫 长袖紫色</td>
-			<td align="center"><img width="50" height="50" src="/images/pic/ppp2.jpg"/></td>
-			<td align="center">否</td>
-			<td align="center">是</td>
-			<td align="center">否</td>
-			<td align="center">下架</td>
-			<td align="center">
-			<a href="#" class="pn-opt">查看</a> | <a href="#" class="pn-opt">修改</a> | <a href="#" onclick="if(!confirm('您确定删除吗？')) {return false;}" class="pn-opt">删除</a> | <a href="../sku/list.jsp" class="pn-opt">库存</a>
-			</td>
-		</tr>
-		<tr bgcolor="#ffffff" onmouseover="this.bgColor='#eeeeee'" onmouseout="this.bgColor='#ffffff'">
-			<td><input type="checkbox" name="ids" value="73"/></td>
-			<td>20141028114407438</td>
-			<td align="center">依琦莲2014瑜伽服套装新款 瑜珈健身服三件套 广场舞蹈服装 女瑜伽服送胸垫 长袖紫色</td>
-			<td align="center"><img width="50" height="50" src="/images/pic/ppp3.jpg"/></td>
-			<td align="center">否</td>
-			<td align="center">是</td>
-			<td align="center">否</td>
-			<td align="center">下架</td>
-			<td align="center">
-			<a href="#" class="pn-opt">查看</a> | <a href="#" class="pn-opt">修改</a> | <a href="#" onclick="if(!confirm('您确定删除吗？')) {return false;}" class="pn-opt">删除</a> | <a href="../sku/list.jsp" class="pn-opt">库存</a>
-			</td>
-		</tr>
-		<tr bgcolor="#ffffff" onmouseover="this.bgColor='#eeeeee'" onmouseout="this.bgColor='#ffffff'">
-			<td><input type="checkbox" name="ids" value="73"/></td>
-			<td>20141028114405217</td>
-			<td align="center">依琦莲2014瑜伽服套装新款 瑜珈健身服三件套 广场舞蹈服装 女瑜伽服送胸垫 长袖紫色</td>
-			<td align="center"><img width="50" height="50" src="/images/pic/ppp4.jpg"/></td>
-			<td align="center">否</td>
-			<td align="center">是</td>
-			<td align="center">否</td>
-			<td align="center">下架</td>
-			<td align="center">
-			<a href="#" class="pn-opt">查看</a> | <a href="#" class="pn-opt">修改</a> | <a href="#" onclick="if(!confirm('您确定删除吗？')) {return false;}" class="pn-opt">删除</a> | <a href="../sku/list.jsp" class="pn-opt">库存</a>
-			</td>
-		</tr>
+		<c:forEach items="${page.result}" var="product">
+			<tr bgcolor="#ffffff" onmouseover="this.bgColor='#eeeeee'" onmouseout="this.bgColor='#ffffff'">
+				<td><input type="checkbox" name="ids" value="${product.id}"/></td>
+				<td>${product.id}</td>
+				<td align="center"><c:out value="${product.name}"/></td>
+				<td align="center">
+					<c:forTokens items="${product.imgUrl}" delims="," var="img" begin="0" end="0">
+						<img width="50" height="50" src="${img}"/>
+					</c:forTokens>
+				</td>
+				<td align="center">
+					<c:if test="${product.isNew==0}">否</c:if>
+					<c:if test="${product.isNew==1}">是</c:if>
+				</td>
+				<td align="center">
+					<c:if test="${product.isCommend==0}">否</c:if>
+					<c:if test="${product.isCommend==1}">是</c:if>
+				</td>
+				<td align="center">
+					<c:if test="${product.isShow==0}">否</c:if>
+					<c:if test="${product.isShow==1}">是</c:if>
+				</td>
+				<td align="center">
+					<c:if test="${product.isShow==0}">下架</c:if>
+					<c:if test="${product.isShow==1}">上架</c:if>
+				</td>
+				<td align="center">
+				<a href="#" class="pn-opt">查看</a> |
+				<a href="#" class="pn-opt">修改</a> |
+				<a href="#" onclick="if(!confirm('您确定删除吗？')) {return false;}" class="pn-opt">删除</a> |
+				<a href="../sku/list.do?productId=${product.id}" class="pn-opt">库存</a>
+				</td>
+			</tr>
+		</c:forEach>
+
 	</tbody>
 </table>
 <div class="page pb15">
 	<span class="r inb_a page_b">
 	
-		<font size="2">首页</font>
+		<c:if test="${page.pageNum==1}"><font size="2">首页</font></c:if>
+		<c:if test="${page.pageNum!=1}"><a href="list.do?pageNum=1&name=${example.name}&brandId=${example.brandId}&isShow=${example.isShow}"><font size="2">首页</font></a></c:if>
+
+		<c:if test="${page.pageNum==1}"><font size="2">上一页</font></c:if>
+		<c:if test="${page.pageNum!=1}"><a href="list.do?pageNum=${page.pageNum-1}&name=${example.name}&brandId=${example.brandId}&isShow=${example.isShow}"><font size="2">上一页</font></a></c:if>
+
+		<c:forEach begin="${page.startNum}" end="${page.endNum}" var="num">
+			<c:if test="${page.pageNum == num}"><strong>${num}</strong></c:if>
+			<c:if test="${page.pageNum != num}"><a href="list.do?pageNum=${num}&name=${example.name}&brandId=${example.brandId}&isShow=${example.isShow}">${num}</a></c:if>
+		</c:forEach>
+
+		<c:if test="${page.pageNum==page.pages}"><font size="2">下一页</font></c:if>
+		<c:if test="${page.pageNum!=page.pages}"><a href="list.do?pageNum=${page.pageNum+1}&name=${example.name}&brandId=${example.brandId}&isShow=${example.isShow}"><font size="2">下一页</font></a></c:if>
+
+		<c:if test="${page.pageNum==page.pages}}"><font size="2">尾页</font></c:if>
+		<c:if test="${page.pageNum!=page.pages}"><a href="list.do?pageNum=${page.pages}&name=${example.name}&brandId=${example.brandId}&isShow=${example.isShow}"><font size="2">尾页</font></a></c:if>
 	
-		<font size="2">上一页</font>
-	
-		<strong>1</strong>
-	
-		<a href="/product/list.do?&amp;isShow=0&amp;pageNo=2">2</a>
-	
-		<a href="/product/list.do?&amp;isShow=0&amp;pageNo=3">3</a>
-	
-		<a href="/product/list.do?&amp;isShow=0&amp;pageNo=4">4</a>
-	
-		<a href="/product/list.do?&amp;isShow=0&amp;pageNo=5">5</a>
-	
-		<a href="/product/list.do?&amp;isShow=0&amp;pageNo=2"><font size="2">下一页</font></a>
-	
-		<a href="/product/list.do?&amp;isShow=0&amp;pageNo=5"><font size="2">尾页</font></a>
-	
-		共<var>5</var>页 到第<input type="text" size="3" id="PAGENO"/>页 <input type="button" onclick="javascript:window.location.href = '/product/list.do?&amp;isShow=0&amp;pageNo=' + $('#PAGENO').val() " value="确定" class="hand btn60x20" id="skip"/>
+		共<var>${page.pages}</var>页 到第<input type="text" size="3" id="PAGENO"/>页 <input type="button" onclick="javascript:window.location.href = '/product/list.do?&amp;isShow=0&amp;pageNo=' + $('#PAGENO').val() " value="确定" class="hand btn60x20" id="skip"/>
 	
 	</span>
 </div>

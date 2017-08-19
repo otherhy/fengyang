@@ -94,8 +94,26 @@ public class PageHelper implements Interceptor {
             }
 
             //为页码属性赋值
-            page.setStartNum(page.getPageNum() - 5 > 1 ? page.getPageNum() - 5 : 1);
-            page.setEndNum(page.getStartNum() + 10 > page.getPages() ? page.getPages() : page.getStartNum() + 10);
+            if (page.getPageNum() - 5 > 1) {
+                page.setStartNum(page.pageNum - 5);
+                if (page.getStartNum() + 9 > page.getPages()) {
+                    page.setEndNum(page.getPages());
+                    if (page.getEndNum() - 9 > 1) {
+                        page.setStartNum(page.getEndNum() - 9);
+                    } else {
+                        page.setStartNum(1);
+                    }
+                } else {
+                    page.setEndNum(page.getStartNum() + 9);
+                }
+            } else {
+                page.setStartNum(1);
+                if (page.getStartNum() + 9 > page.getPages()) {
+                    page.setEndNum(page.getPages());
+                } else {
+                    page.setEndNum(page.getStartNum() + 9);
+                }
+            }
 
             // 重写sql
             String pageSql = buildPageSql(sql, page);

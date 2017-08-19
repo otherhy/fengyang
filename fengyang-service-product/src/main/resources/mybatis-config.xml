@@ -12,5 +12,10 @@
     
     <plugins>
         <plugin interceptor="com.scorpio.fengyang.tools.PageHelper"></plugin>
+        
+        <plugin interceptor="com.github.abel533.mapperhelper.MapperInterceptor">
+            <property name="IDENTITY" value="HSQLDB"/>
+            <property name="mappers" value="com.github.abel533.mapper.Mapper"/>
+        </plugin>
     </plugins>
 </configuration>

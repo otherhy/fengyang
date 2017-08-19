@@ -1,5 +1,6 @@
 package com.scorpio.fengyang.action;
 
+import com.scorpio.fengyang.base.MaHou;
 import com.scorpio.fengyang.pojo.Brand;
 import com.scorpio.fengyang.service.BrandService;
 import com.scorpio.fengyang.tools.EncodingTool;
@@ -36,7 +37,7 @@ public class BrandController {
         System.out.println("total = " + page.getResult().size());
 
         model.addAttribute("page", page);
-        model.addAttribute("brand", brand);
+        model.addAttribute("example", brand);
 
         return "brand/list";
     }
@@ -76,7 +77,7 @@ public class BrandController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        map.put("path", "http://192.168.56.103:8888/" + path);
+        map.put("path", MaHou.FASTDFS_SERVLET + path);
 
         return map;
     }
@@ -86,6 +87,16 @@ public class BrandController {
         System.out.println(brand);
 
         brandService.add(brand);
+
+        return "redirect:/console/brand/list.do";
+    }
+
+    @RequestMapping(value = "/console/brand/doDelete.do")
+    public String doDelete(String ids) {
+        System.out.println(ids);
+
+        //删除选中的品牌
+        brandService.delete(ids);
 
         return "redirect:/console/brand/list.do";
     }

@@ -3,6 +3,8 @@ package com.scorpio.fengyang.service;
 import com.scorpio.fengyang.pojo.Brand;
 import com.scorpio.fengyang.tools.PageHelper;
 
+import java.util.List;
+
 /**
  * 商品品牌管理业务层
  * Created by hao on 2017/8/15.
@@ -35,4 +37,15 @@ public interface BrandService {
      * @param brand
      */
     public void add(Brand brand);
+
+    /**
+     * 根据id删除对应的品牌
+     * @param ids
+     */
+    public void delete(String ids);
+
+    /**
+     * 查询所有品牌
+     */
+    public List<Brand> findAll();
 }
